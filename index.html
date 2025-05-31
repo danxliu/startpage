@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startpage</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <img class="image" src="assets/img.png" />
+      <div class="right">
+        <div class="time">
+          <div id="hour">00</div>
+          <div>:</div>
+          <div id="min">00</div>
+          <div id="ap">AM</div>
+        </div>
+        <div class="search">
+          <input id="search" type="text" placeholder="Search..." autofocus />
+        </div>
+        <div class="links">
+          <div class="column">
+            <h1>Work</h1>
+            <a href="https://mail.google.com">Mail</a>
+            <a href="https://calendar.google.com">Calendar</a>
+            <a href="https://drive.google.com">Drive</a>
+            <a href="https://www.github.com">Github</a>
+          </div>
+          <div class="vs"></div>
+          <div class="column">
+            <h1>Fun</h1>
+            <a href="https://www.youtube.com">Youtube</a>
+            <a href="https://old.reddit.com">Reddit</a>
+            <a href="https://www.monkeytype.com">Monkeytype</a>
+          </div>
+          <div class="vs"></div>
+          <div class="column">
+            <h1>Class</h1>
+            <a href="https://edstem.org">Edstem</a>
+            <a href="https://bcourses.berkeley.edu">Canvas</a>
+            <a href="https://calcentral.berkeley.edu">CalCentral</a>
+            <a href="https://berkeleytime.com">BerkeleyTime</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const searchURL = "https://www.google.com/search?q=";
+
+      const hrElem = document.getElementById("hour");
+      const minElem = document.getElementById("min");
+      const apElem = document.getElementById("ap");
+
+      const setTime = () => {
+        const date = new Date(Date.now());
+        const hours = date.getHours();
+        hrElem.innerHTML = hours > 12 ? hours - 12 : hours;
+        minElem.innerHTML = date.getMinutes();
+        apElem.innerHTML = hours > 12 ? "PM" : "AM";
+      };
+
+      setTime();
+      setTimeout(setTime, 1000);
+
+      const searchElem = document.getElementById("search");
+
+      searchElem.onkeyup = (e) => {
+        if (e.key === "Enter" || e.keyCode === 13) {
+          const url = `${searchURL}${searchElem.value}`;
+          window.location.replace(url);
+        }
+      };
+    </script>
+  </body>
+</html>

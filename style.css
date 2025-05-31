@@ -1,0 +1,127 @@
+:root {
+  --radius: 0.4em;
+  --fg0: #D3C6AA;
+  --fg1: #9DA9A0;
+  --fg2: #859289;
+  --red: #E67E80;
+  --orange: #E69875;
+  --yellow: #DBBC7F;
+  --green: #A7C080;
+  --blue: #7FBBB3;
+  --aqua: #83C092;
+  --purple: #D699B6;
+  --bg0: #272E33;
+  --bg1: #2E383C;
+}
+
+*{
+  margin: unset;
+  padding: unset;
+  color: var(--fg0);
+  font-family: Dosis;
+}
+
+@font-face {
+  font-family: Dosis;
+  src: url(assets/Dosis.ttf);
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url(assets/Rubik.ttf);
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+  border-radius: var(--radius);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.main {
+  background-color: var(--bg0);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5em;
+}
+
+.time {
+  display: flex;
+  flex-direction: row;
+  font-family: Rubik;
+  font-size: 1.8em;
+}
+
+#hour {
+  color: var(--green);
+}
+
+#min {
+  color: var(--blue);
+}
+
+#ap {
+  margin-left: 0.5em;
+  color: var(--red);
+}
+
+input[type=text] {
+  font-size: 1.2em;
+  padding: 1.0em;
+  border: none;
+  background-color: var(--bg1);
+  color: var(--fg0);
+  border-radius: var(--radius);
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+h1 {
+  font-family: Rubik;
+  font-size: 1.2em;
+  color: var(--aqua);
+  margin-bottom: 0.4em;
+}
+
+a {
+  font-size: 1.0em;
+  color: var(--fg2);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--aqua);
+}
+
+.vs {
+  height: 2.5em;
+  border: solid var(--bg1) 1px;
+  border-radius: var(--radius);
+  align-self: center;
+}
