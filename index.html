@@ -51,12 +51,21 @@
       const minElem = document.getElementById("min");
       const apElem = document.getElementById("ap");
 
+      const addZeros = (num) => {
+        if (num < 10) return `0${num}`
+        return num
+      }
+
       const setTime = () => {
         const date = new Date(Date.now());
         const hours = date.getHours();
-        hrElem.innerHTML = hours > 12 ? hours - 12 : hours;
-        minElem.innerHTML = date.getMinutes();
-        apElem.innerHTML = hours > 12 ? "PM" : "AM";
+        var nhours = hours;
+        nhours = nhours > 12 ? nhours - 12 : nhours
+        nhours = nhours == 0 ? nhours + 12 : nhours
+        const minutes = date.getMinutes();
+        hrElem.innerHTML = nhours;
+        minElem.innerHTML = addZeros(minutes);
+        apElem.innerHTML = hours >= 12 ? "PM" : "AM";
       };
 
       setTime();
